@@ -1,0 +1,87 @@
+Restore Archived Project report for sint
+Thu Apr 20 18:40:17 2023
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Restore Archived Project Summary
+  3. Restore Archived Project Messages
+  4. Files Restored
+  5. Files Not Restored
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------+
+; Restore Archived Project Summary                                        ;
++---------------------------------+---------------------------------------+
+; Restore Archived Project Status ; Successful - Thu Apr 20 18:40:17 2023 ;
+; Revision Name                   ; sint                                  ;
+; Top-level Entity Name           ; sint                                  ;
+; Family                          ; Cyclone IV E                          ;
++---------------------------------+---------------------------------------+
+
+
++-----------------------------------+
+; Restore Archived Project Messages ;
++-----------------------------------+
+Info: Successfully restored '/home/marko/Desktop/DES/projekt/sint(1).qar' into the '/home/marko/Desktop/DES/projekt/sint(1)_restored/' directory
+Info: Generated report 'sint.restore.rpt'
+Info (23030): Evaluation of Tcl script /home/marko/Desktop/DES/quartus/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 582 megabytes
+    Info: Processing ended: Thu Apr 20 18:40:17 2023
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+
++-------------------------+
+; Files Restored          ;
++-------------------------+
+; File Name               ;
++-------------------------+
+; qar_info.json           ;
+; IOvmes.vhd              ;
+; assignment_defaults.qdf ;
+; de0.sdc                 ;
+; gen.v                   ;
+; generator.vhd           ;
+; proc.vhd                ;
+; pulzmod.vhd             ;
+; sint.qpf                ;
+; sint.qsf                ;
+; sint.vhd                ;
+; vmes.v                  ;
+; vmesnik.vhd             ;
++-------------------------+
+
+
++--------------------+
+; Files Not Restored ;
++--------------------+
+; File Name          ;
++--------------------+
+
+

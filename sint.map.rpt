@@ -1,0 +1,812 @@
+Analysis & Synthesis report for sint
+Fri May 12 13:38:13 2023
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Port Connectivity Checks: "generator:u2|gen:g12"
+ 13. Port Connectivity Checks: "generator:u2|gen:g11"
+ 14. Port Connectivity Checks: "generator:u2|gen:g10"
+ 15. Port Connectivity Checks: "generator:u2|gen:g9"
+ 16. Port Connectivity Checks: "generator:u2|gen:g8"
+ 17. Port Connectivity Checks: "generator:u2|gen:g7"
+ 18. Port Connectivity Checks: "generator:u2|gen:g6"
+ 19. Port Connectivity Checks: "generator:u2|gen:g5"
+ 20. Port Connectivity Checks: "generator:u2|gen:g4"
+ 21. Port Connectivity Checks: "generator:u2|gen:g3"
+ 22. Port Connectivity Checks: "generator:u2|gen:g2"
+ 23. Port Connectivity Checks: "generator:u2|gen:g1"
+ 24. Port Connectivity Checks: "vmesnik:u1|IOvmes:u1"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri May 12 13:38:13 2023       ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                      ; sint                                        ;
+; Top-level Entity Name              ; sint                                        ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 1,293                                       ;
+;     Total combinational functions  ; 1,265                                       ;
+;     Dedicated logic registers      ; 250                                         ;
+; Total registers                    ; 250                                         ;
+; Total pins                         ; 26                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                            ; sint               ; sint               ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                   ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
+; gen.vhd                          ; yes             ; User VHDL File         ; /home/marko/Desktop/DES/projekt/sint(1)_restored/gen.vhd       ;         ;
+; sint.vhd                         ; yes             ; User VHDL File         ; /home/marko/Desktop/DES/projekt/sint(1)_restored/sint.vhd      ;         ;
+; IOvmes.vhd                       ; yes             ; User VHDL File         ; /home/marko/Desktop/DES/projekt/sint(1)_restored/IOvmes.vhd    ;         ;
+; vmes.v                           ; yes             ; User Verilog HDL File  ; /home/marko/Desktop/DES/projekt/sint(1)_restored/vmes.v        ;         ;
+; vmesnik.vhd                      ; yes             ; User VHDL File         ; /home/marko/Desktop/DES/projekt/sint(1)_restored/vmesnik.vhd   ;         ;
+; generator.vhd                    ; yes             ; User VHDL File         ; /home/marko/Desktop/DES/projekt/sint(1)_restored/generator.vhd ;         ;
+; proc.vhd                         ; yes             ; User VHDL File         ; /home/marko/Desktop/DES/projekt/sint(1)_restored/proc.vhd      ;         ;
+; pulzmod.vhd                      ; yes             ; User VHDL File         ; /home/marko/Desktop/DES/projekt/sint(1)_restored/pulzmod.vhd   ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 1,293     ;
+;                                             ;           ;
+; Total combinational functions               ; 1265      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 511       ;
+;     -- 3 input functions                    ; 304       ;
+;     -- <=2 input functions                  ; 450       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 694       ;
+;     -- arithmetic mode                      ; 571       ;
+;                                             ;           ;
+; Total registers                             ; 250       ;
+;     -- Dedicated logic registers            ; 250       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 26        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 251       ;
+; Total fan-out                               ; 4582      ;
+; Average fan-out                             ; 2.91      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                             ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+-------------+--------------+
+; |sint                      ; 1265 (0)            ; 250 (0)                   ; 0           ; 0            ; 0       ; 0         ; 26   ; 0            ; |sint                      ; sint        ; work         ;
+;    |generator:u2|          ; 873 (17)            ; 195 (8)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sint|generator:u2         ; generator   ; work         ;
+;       |gen:g10|            ; 57 (57)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sint|generator:u2|gen:g10 ; gen         ; work         ;
+;       |gen:g11|            ; 72 (72)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sint|generator:u2|gen:g11 ; gen         ; work         ;
+;       |gen:g12|            ; 76 (76)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sint|generator:u2|gen:g12 ; gen         ; work         ;
+;       |gen:g1|             ; 74 (74)             ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sint|generator:u2|gen:g1  ; gen         ; work         ;
+;       |gen:g2|             ; 72 (72)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sint|generator:u2|gen:g2  ; gen         ; work         ;
+;       |gen:g3|             ; 70 (70)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sint|generator:u2|gen:g3  ; gen         ; work         ;
+;       |gen:g4|             ; 74 (74)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sint|generator:u2|gen:g4  ; gen         ; work         ;
+;       |gen:g5|             ; 71 (71)             ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sint|generator:u2|gen:g5  ; gen         ; work         ;
+;       |gen:g6|             ; 73 (73)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sint|generator:u2|gen:g6  ; gen         ; work         ;
+;       |gen:g7|             ; 75 (75)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sint|generator:u2|gen:g7  ; gen         ; work         ;
+;       |gen:g8|             ; 67 (67)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sint|generator:u2|gen:g8  ; gen         ; work         ;
+;       |gen:g9|             ; 75 (75)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sint|generator:u2|gen:g9  ; gen         ; work         ;
+;    |proc:u3|               ; 261 (261)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sint|proc:u3              ; proc        ; work         ;
+;    |pulzmod:u4|            ; 16 (16)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sint|pulzmod:u4           ; pulzmod     ; work         ;
+;    |vmesnik:u1|            ; 115 (36)            ; 47 (8)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sint|vmesnik:u1           ; vmesnik     ; work         ;
+;       |IOvmes:u1|          ; 69 (69)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sint|vmesnik:u1|IOvmes:u1 ; IOvmes      ; work         ;
+;       |vmes:u0|            ; 10 (10)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sint|vmesnik:u1|vmes:u0   ; vmes        ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                    ;
++-----------------------------------------+---------------------------------------------+
+; Register name                           ; Reason for Removal                          ;
++-----------------------------------------+---------------------------------------------+
+; generator:u2|gen:g1|st[0]               ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g6|stZaga[0]           ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g8|stZaga[6]           ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g2|stZaga[0]           ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g5|st[1]               ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g8|stZaga[3,5]         ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g11|stZaga[0]          ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g5|stZaga[0]           ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g10|st[2]              ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g3|stZaga[3]           ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g4|stZaga[0]           ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g8|stZaga[0]           ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g2|st[1]               ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g10|stZaga[2]          ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g8|stZaga[4]           ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g12|st[0]              ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g10|st[0]              ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g10|stZaga[3]          ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g5|stZaga[1]           ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g10|st[1]              ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g5|st[0]               ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g11|stZaga[2]          ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g5|st[2]               ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g10|st[3]              ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g3|stZaga[1,2]         ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g8|stZaga[1]           ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g3|stZaga[4]           ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g10|stZaga[0]          ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g2|st[0]               ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g8|stZaga[2]           ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g1|stZaga[0]           ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g11|stZaga[1]          ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g1|st[1]               ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g12|st[1]              ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g10|stZaga[1]          ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g10|st[4]              ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; generator:u2|gen:g3|stZaga[0]           ; Merged with generator:u2|gen:g12|stZaga[0]  ;
+; vmesnik:u1|del[7]                       ; Merged with pulzmod:u4|c[7]                 ;
+; vmesnik:u1|del[6]                       ; Merged with pulzmod:u4|c[6]                 ;
+; vmesnik:u1|del[5]                       ; Merged with pulzmod:u4|c[5]                 ;
+; vmesnik:u1|del[4]                       ; Merged with pulzmod:u4|c[4]                 ;
+; vmesnik:u1|del[3]                       ; Merged with pulzmod:u4|c[3]                 ;
+; vmesnik:u1|del[2]                       ; Merged with pulzmod:u4|c[2]                 ;
+; vmesnik:u1|del[1]                       ; Merged with pulzmod:u4|c[1]                 ;
+; vmesnik:u1|del[0]                       ; Merged with pulzmod:u4|c[0]                 ;
+; generator:u2|gen:g12|stZaga[0]          ; Stuck at GND due to stuck port data_in      ;
+; vmesnik:u1|vmes:u0|e[0]                 ; Merged with pulzmod:u4|c[0]                 ;
+; vmesnik:u1|IOvmes:u1|d[0]               ; Merged with pulzmod:u4|c[0]                 ;
+; generator:u2|gen:g7|stZaga[0]           ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g2|stZaga[1]           ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g11|st[0]              ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g3|st[0]               ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g2|st[2]               ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g6|stZaga[1]           ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g8|stZaga[7]           ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g3|stZaga[5]           ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g4|stZaga[1]           ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g11|stZaga[3]          ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g9|stZaga[0]           ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g5|stZaga[2]           ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g7|st[0]               ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g5|st[3]               ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g1|stZaga[1]           ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g1|st[2]               ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g4|st[0]               ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g8|st[0]               ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g6|st[0]               ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g9|st[0]               ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g10|st[5]              ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g12|st[2]              ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; generator:u2|gen:g10|stZaga[4]          ; Merged with generator:u2|gen:g12|stZaga[1]  ;
+; vmesnik:u1|vmes:u0|e[1]                 ; Merged with pulzmod:u4|c[1]                 ;
+; vmesnik:u1|IOvmes:u1|d[1]               ; Merged with pulzmod:u4|c[1]                 ;
+; generator:u2|gen:g6|st[1]               ; Merged with generator:u2|gen:g12|stZaga[2]  ;
+; generator:u2|gen:g2|st[3]               ; Merged with generator:u2|gen:g12|stZaga[2]  ;
+; generator:u2|gen:g6|stZaga[2]           ; Merged with generator:u2|gen:g12|stZaga[2]  ;
+; generator:u2|gen:g12|st[3]              ; Merged with generator:u2|gen:g12|stZaga[2]  ;
+; generator:u2|gen:g2|stZaga[2]           ; Merged with generator:u2|gen:g12|stZaga[2]  ;
+; generator:u2|gen:g10|stZaga[5]          ; Merged with generator:u2|gen:g12|stZaga[2]  ;
+; generator:u2|gen:g9|st[1]               ; Merged with generator:u2|gen:g11|stZaga[4]  ;
+; generator:u2|gen:g5|st[4]               ; Merged with generator:u2|gen:g11|stZaga[4]  ;
+; generator:u2|gen:g4|stZaga[2]           ; Merged with generator:u2|gen:g11|stZaga[4]  ;
+; generator:u2|gen:g5|stZaga[3]           ; Merged with generator:u2|gen:g11|stZaga[4]  ;
+; generator:u2|gen:g10|st[6]              ; Merged with generator:u2|gen:g11|st[1]      ;
+; generator:u2|gen:g4|st[1]               ; Merged with generator:u2|gen:g11|st[1]      ;
+; generator:u2|gen:g8|stZaga[8]           ; Merged with generator:u2|gen:g11|st[1]      ;
+; generator:u2|gen:g8|st[1]               ; Merged with generator:u2|gen:g11|st[1]      ;
+; generator:u2|gen:g3|st[1]               ; Merged with generator:u2|gen:g11|st[1]      ;
+; generator:u2|gen:g3|stZaga[6]           ; Merged with generator:u2|gen:g7|st[1]       ;
+; generator:u2|gen:g1|stZaga[2]           ; Merged with generator:u2|gen:g7|st[1]       ;
+; generator:u2|gen:g1|st[3]               ; Merged with generator:u2|gen:g7|st[1]       ;
+; vmesnik:u1|vmes:u0|e[2]                 ; Merged with pulzmod:u4|c[2]                 ;
+; generator:u2|gen:g9|stZaga[1]           ; Merged with generator:u2|gen:g12|stZaga[2]  ;
+; generator:u2|gen:g11|st[1]              ; Merged with generator:u2|gen:g12|stZaga[2]  ;
+; generator:u2|gen:g7|stZaga[1]           ; Merged with generator:u2|gen:g12|stZaga[2]  ;
+; generator:u2|gen:g6|stZaga[3]           ; Merged with generator:u2|gen:g12|st[4]      ;
+; generator:u2|gen:g4|stZaga[3]           ; Merged with generator:u2|gen:g11|stZaga[5]  ;
+; generator:u2|gen:g5|stZaga[4]           ; Merged with generator:u2|gen:g11|stZaga[5]  ;
+; generator:u2|gen:g5|st[5]               ; Merged with generator:u2|gen:g11|stZaga[5]  ;
+; generator:u2|gen:g8|stZaga[9]           ; Merged with generator:u2|gen:g11|st[2]      ;
+; generator:u2|gen:g10|st[7]              ; Merged with generator:u2|gen:g11|st[2]      ;
+; generator:u2|gen:g8|st[2]               ; Merged with generator:u2|gen:g11|st[2]      ;
+; generator:u2|gen:g1|st[4]               ; Merged with generator:u2|gen:g7|st[2]       ;
+; generator:u2|gen:g3|stZaga[7]           ; Merged with generator:u2|gen:g7|st[2]       ;
+; generator:u2|gen:g2|st[4]               ; Merged with generator:u2|gen:g6|st[2]       ;
+; vmesnik:u1|vmes:u0|e[3]                 ; Merged with pulzmod:u4|c[3]                 ;
+; generator:u2|gen:g3|st[2]               ; Merged with generator:u2|gen:g12|stZaga[3]  ;
+; generator:u2|gen:g10|stZaga[6]          ; Merged with generator:u2|gen:g12|st[4]      ;
+; generator:u2|gen:g9|stZaga[2]           ; Merged with generator:u2|gen:g12|st[4]      ;
+; generator:u2|gen:g11|st[2]              ; Merged with generator:u2|gen:g12|st[4]      ;
+; generator:u2|gen:g8|st[3]               ; Merged with generator:u2|gen:g11|st[3]      ;
+; generator:u2|gen:g3|stZaga[8]           ; Merged with generator:u2|gen:g7|st[3]       ;
+; generator:u2|gen:g2|stZaga[3]           ; Merged with generator:u2|gen:g4|st[2]       ;
+; generator:u2|gen:g12|st[4]              ; Merged with generator:u2|gen:g12|stZaga[3]  ;
+; generator:u2|gen:g3|st[3]               ; Merged with generator:u2|gen:g12|stZaga[4]  ;
+; generator:u2|gen:g8|stZaga[10]          ; Merged with generator:u2|gen:g12|st[5]      ;
+; generator:u2|gen:g9|st[2]               ; Merged with generator:u2|gen:g11|stZaga[5]  ;
+; generator:u2|gen:g9|stZaga[3]           ; Merged with generator:u2|gen:g10|st[8]      ;
+; generator:u2|gen:g6|stZaga[4]           ; Merged with generator:u2|gen:g10|st[8]      ;
+; generator:u2|gen:g1|stZaga[3]           ; Merged with generator:u2|gen:g7|st[2]       ;
+; generator:u2|gen:g7|stZaga[2]           ; Merged with generator:u2|gen:g12|stZaga[3]  ;
+; generator:u2|gen:g12|st[5]              ; Merged with generator:u2|gen:g12|stZaga[4]  ;
+; generator:u2|gen:g9|st[3]               ; Merged with generator:u2|gen:g11|stZaga[6]  ;
+; generator:u2|gen:g10|st[8]              ; Merged with generator:u2|gen:g10|stZaga[7]  ;
+; generator:u2|gen:g5|st[6]               ; Merged with generator:u2|gen:g5|stZaga[5]   ;
+; generator:u2|gen:g2|stZaga[4]           ; Merged with generator:u2|gen:g4|st[3]       ;
+; generator:u2|gen:g1|st[5]               ; Merged with generator:u2|gen:g1|stZaga[4]   ;
+; generator:u2|gen:g11|st[3]              ; Merged with generator:u2|gen:g12|stZaga[4]  ;
+; generator:u2|gen:g12|st[6]              ; Merged with generator:u2|gen:g12|stZaga[5]  ;
+; generator:u2|gen:g9|st[4]               ; Merged with generator:u2|gen:g11|stZaga[7]  ;
+; generator:u2|gen:g7|stZaga[3]           ; Merged with generator:u2|gen:g10|stZaga[7]  ;
+; generator:u2|gen:g10|st[9]              ; Merged with generator:u2|gen:g10|stZaga[8]  ;
+; generator:u2|gen:g9|stZaga[4]           ; Merged with generator:u2|gen:g10|stZaga[8]  ;
+; generator:u2|gen:g3|st[4]               ; Merged with generator:u2|gen:g8|stZaga[11]  ;
+; generator:u2|gen:g4|st[2]               ; Merged with generator:u2|gen:g6|st[2]       ;
+; generator:u2|gen:g5|st[7]               ; Merged with generator:u2|gen:g5|stZaga[6]   ;
+; generator:u2|gen:g2|stZaga[5]           ; Merged with generator:u2|gen:g4|st[4]       ;
+; generator:u2|gen:g11|st[4]              ; Merged with generator:u2|gen:g12|stZaga[5]  ;
+; generator:u2|gen:g7|st[1]               ; Merged with generator:u2|gen:g11|stZaga[4]  ;
+; generator:u2|gen:g9|st[5]               ; Merged with generator:u2|gen:g11|stZaga[8]  ;
+; generator:u2|gen:g9|stZaga[5]           ; Merged with generator:u2|gen:g10|st[10]     ;
+; generator:u2|gen:g7|st[2]               ; Merged with generator:u2|gen:g11|stZaga[5]  ;
+; generator:u2|gen:g10|st[10]             ; Merged with generator:u2|gen:g10|stZaga[9]  ;
+; generator:u2|gen:g8|st[4]               ; Merged with generator:u2|gen:g8|stZaga[11]  ;
+; generator:u2|gen:g3|st[5]               ; Merged with generator:u2|gen:g8|stZaga[12]  ;
+; generator:u2|gen:g6|stZaga[5]           ; Merged with generator:u2|gen:g7|stZaga[4]   ;
+; generator:u2|gen:g12|st[7]              ; Merged with generator:u2|gen:g12|stZaga[6]  ;
+; generator:u2|gen:g7|st[3]               ; Merged with generator:u2|gen:g11|stZaga[6]  ;
+; generator:u2|gen:g9|st[6]               ; Merged with generator:u2|gen:g11|stZaga[9]  ;
+; generator:u2|gen:g10|st[11]             ; Merged with generator:u2|gen:g10|stZaga[10] ;
+; generator:u2|gen:g8|st[5]               ; Merged with generator:u2|gen:g8|stZaga[12]  ;
+; generator:u2|gen:g6|stZaga[6]           ; Merged with generator:u2|gen:g7|stZaga[5]   ;
+; generator:u2|gen:g1|stZaga[4]           ; Merged with generator:u2|gen:g5|stZaga[5]   ;
+; generator:u2|gen:g2|st[5]               ; Merged with generator:u2|gen:g4|st[3]       ;
+; generator:u2|gen:g1|st[6]               ; Merged with generator:u2|gen:g1|stZaga[5]   ;
+; generator:u2|gen:g4|stZaga[4]           ; Merged with generator:u2|gen:g11|stZaga[6]  ;
+; generator:u2|gen:g7|st[4]               ; Merged with generator:u2|gen:g11|stZaga[7]  ;
+; generator:u2|gen:g9|st[7]               ; Merged with generator:u2|gen:g11|stZaga[10] ;
+; generator:u2|gen:g9|stZaga[6]           ; Merged with generator:u2|gen:g10|stZaga[10] ;
+; generator:u2|gen:g10|st[12]             ; Merged with generator:u2|gen:g10|stZaga[11] ;
+; generator:u2|gen:g8|st[6]               ; Merged with generator:u2|gen:g8|stZaga[13]  ;
+; generator:u2|gen:g5|st[8]               ; Merged with generator:u2|gen:g5|stZaga[7]   ;
+; generator:u2|gen:g2|st[6]               ; Merged with generator:u2|gen:g4|st[4]       ;
+; generator:u2|gen:g1|st[7]               ; Merged with generator:u2|gen:g1|stZaga[6]   ;
+; generator:u2|gen:g10|st[13]             ; Merged with generator:u2|gen:g10|stZaga[12] ;
+; generator:u2|gen:g8|st[7]               ; Merged with generator:u2|gen:g8|stZaga[14]  ;
+; generator:u2|gen:g5|st[9]               ; Merged with generator:u2|gen:g5|stZaga[8]   ;
+; generator:u2|gen:g2|st[7]               ; Merged with generator:u2|gen:g2|stZaga[6]   ;
+; generator:u2|gen:g4|stZaga[5]           ; Merged with generator:u2|gen:g11|stZaga[7]  ;
+; generator:u2|gen:g10|st[14]             ; Merged with generator:u2|gen:g10|stZaga[13] ;
+; generator:u2|gen:g10|st[15]             ; Merged with generator:u2|gen:g10|stZaga[14] ;
+; generator:u2|gen:g5|st[10]              ; Merged with generator:u2|gen:g5|stZaga[9]   ;
+; generator:u2|gen:g2|st[8]               ; Merged with generator:u2|gen:g2|stZaga[7]   ;
+; generator:u2|gen:g4|stZaga[6]           ; Merged with generator:u2|gen:g7|st[5]       ;
+; generator:u2|gen:g5|st[11]              ; Merged with generator:u2|gen:g5|stZaga[10]  ;
+; generator:u2|gen:g2|st[9]               ; Merged with generator:u2|gen:g2|stZaga[8]   ;
+; generator:u2|gen:g2|st[10]              ; Merged with generator:u2|gen:g2|stZaga[9]   ;
+; generator:u2|gen:g2|st[11]              ; Merged with generator:u2|gen:g2|stZaga[10]  ;
+; generator:u2|gen:g2|st[12]              ; Merged with generator:u2|gen:g2|stZaga[11]  ;
+; generator:u2|gen:g2|st[13]              ; Merged with generator:u2|gen:g2|stZaga[12]  ;
+; generator:u2|gen:g2|stZaga[13]          ; Merged with generator:u2|gen:g2|st[14]      ;
+; generator:u2|st[0]                      ; Merged with pulzmod:u4|c[0]                 ;
+; generator:u2|gen:g12|stZaga[7]          ; Merged with generator:u2|gen:g12|st[8]      ;
+; generator:u2|gen:g1|stZaga[7]           ; Merged with generator:u2|gen:g1|st[8]       ;
+; generator:u2|gen:g12|st[9]              ; Merged with generator:u2|gen:g12|stZaga[8]  ;
+; generator:u2|gen:g2|stZaga[14]          ; Merged with generator:u2|gen:g2|st[15]      ;
+; generator:u2|gen:g1|st[9]               ; Merged with generator:u2|gen:g1|stZaga[8]   ;
+; generator:u2|st[1]                      ; Merged with pulzmod:u4|c[1]                 ;
+; generator:u2|gen:g12|stZaga[9]          ; Merged with generator:u2|gen:g12|st[10]     ;
+; generator:u2|gen:g1|stZaga[9]           ; Merged with generator:u2|gen:g1|st[10]      ;
+; generator:u2|gen:g12|stZaga[10]         ; Merged with generator:u2|gen:g12|st[11]     ;
+; generator:u2|gen:g5|stZaga[11]          ; Merged with generator:u2|gen:g5|st[12]      ;
+; generator:u2|gen:g1|stZaga[10]          ; Merged with generator:u2|gen:g1|st[11]      ;
+; generator:u2|gen:g12|stZaga[11]         ; Merged with generator:u2|gen:g12|st[12]     ;
+; generator:u2|gen:g5|stZaga[12]          ; Merged with generator:u2|gen:g5|st[13]      ;
+; generator:u2|gen:g1|stZaga[11]          ; Merged with generator:u2|gen:g1|st[12]      ;
+; generator:u2|gen:g5|stZaga[13]          ; Merged with generator:u2|gen:g5|st[14]      ;
+; generator:u2|gen:g1|stZaga[12]          ; Merged with generator:u2|gen:g1|st[13]      ;
+; generator:u2|gen:g1|stZaga[13]          ; Merged with generator:u2|gen:g1|st[14]      ;
+; generator:u2|gen:g12|stZaga[15]         ; Lost fanout                                 ;
+; generator:u2|gen:g11|stZaga[15]         ; Lost fanout                                 ;
+; generator:u2|gen:g10|stZaga[15]         ; Lost fanout                                 ;
+; generator:u2|gen:g9|stZaga[15]          ; Lost fanout                                 ;
+; generator:u2|gen:g7|stZaga[15]          ; Lost fanout                                 ;
+; generator:u2|gen:g8|stZaga[15]          ; Lost fanout                                 ;
+; generator:u2|gen:g6|stZaga[15]          ; Lost fanout                                 ;
+; generator:u2|gen:g5|stZaga[15]          ; Lost fanout                                 ;
+; generator:u2|gen:g2|stZaga[15]          ; Lost fanout                                 ;
+; generator:u2|gen:g1|stZaga[15]          ; Lost fanout                                 ;
+; generator:u2|gen:g4|stZaga[15]          ; Lost fanout                                 ;
+; generator:u2|gen:g3|stZaga[15]          ; Lost fanout                                 ;
+; Total Number of Removed Registers = 213 ;                                             ;
++-----------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 250   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 225   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; vmesnik:u1|IOvmes:u1|adr[0]            ; 5       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |sint|vmesnik:u1|n[1]             ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |sint|generator:u2|gen:g12|adr[3] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |sint|generator:u2|gen:g11|adr[3] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |sint|generator:u2|gen:g10|adr[3] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |sint|generator:u2|gen:g9|adr[0]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |sint|generator:u2|gen:g8|adr[2]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |sint|generator:u2|gen:g7|adr[2]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |sint|generator:u2|gen:g6|adr[2]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |sint|generator:u2|gen:g5|adr[3]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |sint|generator:u2|gen:g2|adr[0]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |sint|generator:u2|gen:g1|adr[2]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |sint|generator:u2|gen:g4|adr[0]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |sint|generator:u2|gen:g3|adr[0]  ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |sint|proc:u3|d12[6]              ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |sint|proc:u3|d11[4]              ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |sint|proc:u3|d10[3]              ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |sint|proc:u3|d9[2]               ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |sint|proc:u3|d8[6]               ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |sint|proc:u3|d7[6]               ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |sint|proc:u3|d6[6]               ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |sint|proc:u3|d5[6]               ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |sint|proc:u3|d2[5]               ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |sint|proc:u3|d1[4]               ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |sint|proc:u3|d4[1]               ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |sint|proc:u3|d3[1]               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "generator:u2|gen:g12" ;
++--------------+-------+----------+----------------+
+; Port         ; Type  ; Severity ; Details        ;
++--------------+-------+----------+----------------+
+; korak[15..9] ; Input ; Info     ; Stuck at GND   ;
+; korak[5..3]  ; Input ; Info     ; Stuck at GND   ;
+; korak[1..0]  ; Input ; Info     ; Stuck at GND   ;
+; korak[8]     ; Input ; Info     ; Stuck at VCC   ;
+; korak[7]     ; Input ; Info     ; Stuck at GND   ;
+; korak[6]     ; Input ; Info     ; Stuck at VCC   ;
+; korak[2]     ; Input ; Info     ; Stuck at VCC   ;
++--------------+-------+----------+----------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "generator:u2|gen:g11" ;
++--------------+-------+----------+----------------+
+; Port         ; Type  ; Severity ; Details        ;
++--------------+-------+----------+----------------+
+; korak[5..4]  ; Input ; Info     ; Stuck at VCC   ;
+; korak[15..9] ; Input ; Info     ; Stuck at GND   ;
+; korak[7..6]  ; Input ; Info     ; Stuck at GND   ;
+; korak[3..1]  ; Input ; Info     ; Stuck at GND   ;
+; korak[8]     ; Input ; Info     ; Stuck at VCC   ;
+; korak[0]     ; Input ; Info     ; Stuck at VCC   ;
++--------------+-------+----------+----------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "generator:u2|gen:g10" ;
++--------------+-------+----------+----------------+
+; Port         ; Type  ; Severity ; Details        ;
++--------------+-------+----------+----------------+
+; korak[15..9] ; Input ; Info     ; Stuck at GND   ;
+; korak[7..6]  ; Input ; Info     ; Stuck at GND   ;
+; korak[4..0]  ; Input ; Info     ; Stuck at GND   ;
+; korak[8]     ; Input ; Info     ; Stuck at VCC   ;
+; korak[5]     ; Input ; Info     ; Stuck at VCC   ;
++--------------+-------+----------+----------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "generator:u2|gen:g9" ;
++--------------+-------+----------+---------------+
+; Port         ; Type  ; Severity ; Details       ;
++--------------+-------+----------+---------------+
+; korak[1..0]  ; Input ; Info     ; Stuck at VCC  ;
+; korak[15..9] ; Input ; Info     ; Stuck at GND  ;
+; korak[7..5]  ; Input ; Info     ; Stuck at GND  ;
+; korak[3..2]  ; Input ; Info     ; Stuck at GND  ;
+; korak[8]     ; Input ; Info     ; Stuck at VCC  ;
+; korak[4]     ; Input ; Info     ; Stuck at VCC  ;
++--------------+-------+----------+---------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "generator:u2|gen:g8" ;
++--------------+-------+----------+---------------+
+; Port         ; Type  ; Severity ; Details       ;
++--------------+-------+----------+---------------+
+; korak[15..9] ; Input ; Info     ; Stuck at GND  ;
+; korak[7..1]  ; Input ; Info     ; Stuck at GND  ;
+; korak[8]     ; Input ; Info     ; Stuck at VCC  ;
+; korak[0]     ; Input ; Info     ; Stuck at VCC  ;
++--------------+-------+----------+---------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "generator:u2|gen:g7" ;
++--------------+-------+----------+---------------+
+; Port         ; Type  ; Severity ; Details       ;
++--------------+-------+----------+---------------+
+; korak[7..4]  ; Input ; Info     ; Stuck at VCC  ;
+; korak[1..0]  ; Input ; Info     ; Stuck at VCC  ;
+; korak[15..8] ; Input ; Info     ; Stuck at GND  ;
+; korak[3..2]  ; Input ; Info     ; Stuck at GND  ;
++--------------+-------+----------+---------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "generator:u2|gen:g6" ;
++--------------+-------+----------+---------------+
+; Port         ; Type  ; Severity ; Details       ;
++--------------+-------+----------+---------------+
+; korak[7..5]  ; Input ; Info     ; Stuck at VCC  ;
+; korak[15..8] ; Input ; Info     ; Stuck at GND  ;
+; korak[4..3]  ; Input ; Info     ; Stuck at GND  ;
+; korak[2]     ; Input ; Info     ; Stuck at VCC  ;
+; korak[1]     ; Input ; Info     ; Stuck at GND  ;
+; korak[0]     ; Input ; Info     ; Stuck at VCC  ;
++--------------+-------+----------+---------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "generator:u2|gen:g5" ;
++--------------+-------+----------+---------------+
+; Port         ; Type  ; Severity ; Details       ;
++--------------+-------+----------+---------------+
+; korak[7..6]  ; Input ; Info     ; Stuck at VCC  ;
+; korak[4..3]  ; Input ; Info     ; Stuck at VCC  ;
+; korak[15..8] ; Input ; Info     ; Stuck at GND  ;
+; korak[2..0]  ; Input ; Info     ; Stuck at GND  ;
+; korak[5]     ; Input ; Info     ; Stuck at GND  ;
++--------------+-------+----------+---------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "generator:u2|gen:g4" ;
++--------------+-------+----------+---------------+
+; Port         ; Type  ; Severity ; Details       ;
++--------------+-------+----------+---------------+
+; korak[7..6]  ; Input ; Info     ; Stuck at VCC  ;
+; korak[3..2]  ; Input ; Info     ; Stuck at VCC  ;
+; korak[15..8] ; Input ; Info     ; Stuck at GND  ;
+; korak[5..4]  ; Input ; Info     ; Stuck at GND  ;
+; korak[1]     ; Input ; Info     ; Stuck at GND  ;
+; korak[0]     ; Input ; Info     ; Stuck at VCC  ;
++--------------+-------+----------+---------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "generator:u2|gen:g3" ;
++--------------+-------+----------+---------------+
+; Port         ; Type  ; Severity ; Details       ;
++--------------+-------+----------+---------------+
+; korak[7..6]  ; Input ; Info     ; Stuck at VCC  ;
+; korak[15..8] ; Input ; Info     ; Stuck at GND  ;
+; korak[5..1]  ; Input ; Info     ; Stuck at GND  ;
+; korak[0]     ; Input ; Info     ; Stuck at VCC  ;
++--------------+-------+----------+---------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "generator:u2|gen:g2" ;
++--------------+-------+----------+---------------+
+; Port         ; Type  ; Severity ; Details       ;
++--------------+-------+----------+---------------+
+; korak[5..4]  ; Input ; Info     ; Stuck at VCC  ;
+; korak[15..8] ; Input ; Info     ; Stuck at GND  ;
+; korak[1..0]  ; Input ; Info     ; Stuck at GND  ;
+; korak[7]     ; Input ; Info     ; Stuck at VCC  ;
+; korak[6]     ; Input ; Info     ; Stuck at GND  ;
+; korak[3]     ; Input ; Info     ; Stuck at GND  ;
+; korak[2]     ; Input ; Info     ; Stuck at VCC  ;
++--------------+-------+----------+---------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "generator:u2|gen:g1" ;
++--------------+-------+----------+---------------+
+; Port         ; Type  ; Severity ; Details       ;
++--------------+-------+----------+---------------+
+; korak[3..2]  ; Input ; Info     ; Stuck at VCC  ;
+; korak[15..8] ; Input ; Info     ; Stuck at GND  ;
+; korak[1..0]  ; Input ; Info     ; Stuck at GND  ;
+; korak[7]     ; Input ; Info     ; Stuck at VCC  ;
+; korak[6]     ; Input ; Info     ; Stuck at GND  ;
+; korak[5]     ; Input ; Info     ; Stuck at VCC  ;
+; korak[4]     ; Input ; Info     ; Stuck at GND  ;
++--------------+-------+----------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vmesnik:u1|IOvmes:u1"                                                               ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; wr   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 26                          ;
+; cycloneiii_ff         ; 250                         ;
+;     ENA               ; 225                         ;
+;     plain             ; 25                          ;
+; cycloneiii_io_obuf    ; 8                           ;
+; cycloneiii_lcell_comb ; 1266                        ;
+;     arith             ; 571                         ;
+;         2 data inputs ; 352                         ;
+;         3 data inputs ; 219                         ;
+;     normal            ; 695                         ;
+;         0 data inputs ; 12                          ;
+;         1 data inputs ; 40                          ;
+;         2 data inputs ; 47                          ;
+;         3 data inputs ; 85                          ;
+;         4 data inputs ; 511                         ;
+;                       ;                             ;
+; Max LUT depth         ; 15.90                       ;
+; Average LUT depth     ; 8.95                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Fri May 12 13:38:04 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sint -c sint
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file gen.vhd
+    Info (12022): Found design unit 1: gen-RTL File: /home/marko/Desktop/DES/projekt/sint(1)_restored/gen.vhd Line: 14
+    Info (12023): Found entity 1: gen File: /home/marko/Desktop/DES/projekt/sint(1)_restored/gen.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file sint.vhd
+    Info (12022): Found design unit 1: sint-RTL File: /home/marko/Desktop/DES/projekt/sint(1)_restored/sint.vhd Line: 22
+    Info (12023): Found entity 1: sint File: /home/marko/Desktop/DES/projekt/sint(1)_restored/sint.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file IOvmes.vhd
+    Info (12022): Found design unit 1: IOvmes-RTL File: /home/marko/Desktop/DES/projekt/sint(1)_restored/IOvmes.vhd Line: 17
+    Info (12023): Found entity 1: IOvmes File: /home/marko/Desktop/DES/projekt/sint(1)_restored/IOvmes.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file vmes.v
+    Info (12023): Found entity 1: vmes File: /home/marko/Desktop/DES/projekt/sint(1)_restored/vmes.v Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file vmesnik.vhd
+    Info (12022): Found design unit 1: vmesnik-RTL File: /home/marko/Desktop/DES/projekt/sint(1)_restored/vmesnik.vhd Line: 20
+    Info (12023): Found entity 1: vmesnik File: /home/marko/Desktop/DES/projekt/sint(1)_restored/vmesnik.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file generator.vhd
+    Info (12022): Found design unit 1: generator-RTL File: /home/marko/Desktop/DES/projekt/sint(1)_restored/generator.vhd Line: 13
+    Info (12023): Found entity 1: generator File: /home/marko/Desktop/DES/projekt/sint(1)_restored/generator.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file proc.vhd
+    Info (12022): Found design unit 1: proc-RTL File: /home/marko/Desktop/DES/projekt/sint(1)_restored/proc.vhd Line: 14
+    Info (12023): Found entity 1: proc File: /home/marko/Desktop/DES/projekt/sint(1)_restored/proc.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file pulzmod.vhd
+    Info (12022): Found design unit 1: pulzmod-RTL File: /home/marko/Desktop/DES/projekt/sint(1)_restored/pulzmod.vhd Line: 12
+    Info (12023): Found entity 1: pulzmod File: /home/marko/Desktop/DES/projekt/sint(1)_restored/pulzmod.vhd Line: 5
+Info (12127): Elaborating entity "sint" for the top level hierarchy
+Info (12128): Elaborating entity "vmesnik" for hierarchy "vmesnik:u1" File: /home/marko/Desktop/DES/projekt/sint(1)_restored/sint.vhd Line: 35
+Warning (10492): VHDL Process Statement warning at vmesnik.vhd(83): signal "en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/marko/Desktop/DES/projekt/sint(1)_restored/vmesnik.vhd Line: 83
+Info (12128): Elaborating entity "vmes" for hierarchy "vmesnik:u1|vmes:u0" File: /home/marko/Desktop/DES/projekt/sint(1)_restored/vmesnik.vhd Line: 57
+Warning (10230): Verilog HDL assignment warning at vmes.v(15): truncated value with size 32 to match size of target (4) File: /home/marko/Desktop/DES/projekt/sint(1)_restored/vmes.v Line: 15
+Warning (10230): Verilog HDL assignment warning at vmes.v(20): truncated value with size 32 to match size of target (4) File: /home/marko/Desktop/DES/projekt/sint(1)_restored/vmes.v Line: 20
+Info (12128): Elaborating entity "IOvmes" for hierarchy "vmesnik:u1|IOvmes:u1" File: /home/marko/Desktop/DES/projekt/sint(1)_restored/vmesnik.vhd Line: 65
+Info (12128): Elaborating entity "generator" for hierarchy "generator:u2" File: /home/marko/Desktop/DES/projekt/sint(1)_restored/sint.vhd Line: 55
+Info (12128): Elaborating entity "gen" for hierarchy "generator:u2|gen:g1" File: /home/marko/Desktop/DES/projekt/sint(1)_restored/generator.vhd Line: 46
+Warning (10492): VHDL Process Statement warning at gen.vhd(65): signal "adr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/marko/Desktop/DES/projekt/sint(1)_restored/gen.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at gen.vhd(67): signal "adr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/marko/Desktop/DES/projekt/sint(1)_restored/gen.vhd Line: 67
+Warning (10492): VHDL Process Statement warning at gen.vhd(77): signal "adr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/marko/Desktop/DES/projekt/sint(1)_restored/gen.vhd Line: 77
+Warning (10492): VHDL Process Statement warning at gen.vhd(79): signal "adr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/marko/Desktop/DES/projekt/sint(1)_restored/gen.vhd Line: 79
+Info (12128): Elaborating entity "proc" for hierarchy "proc:u3" File: /home/marko/Desktop/DES/projekt/sint(1)_restored/sint.vhd Line: 73
+Info (12128): Elaborating entity "pulzmod" for hierarchy "pulzmod:u4" File: /home/marko/Desktop/DES/projekt/sint(1)_restored/sint.vhd Line: 95
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 12 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1320 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21060): Implemented 8 bidirectional pins
+    Info (21061): Implemented 1294 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 475 megabytes
+    Info: Processing ended: Fri May 12 13:38:13 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
+
+

@@ -1,0 +1,71 @@
+-- generator tonskih signalov
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity generator is
+ port (
+   clk : in std_logic;
+   set : in unsigned(3 downto 0);	-- nastavitve => VIO inputs
+   dat1, dat2, dat3, dat4 : out signed(7 downto 0) 
+ );
+end generator;
+
+architecture RTL of generator is
+ signal en : std_logic;
+ signal c : unsigned(8 downto 0) := to_unsigned(0,9);
+ 
+ component gen is
+ port (
+   clk : in std_logic;
+   en  : in std_logic;
+   korak : in unsigned(15 downto 0);
+   data : out signed(7 downto 0) );
+ end component;
+ 
+begin
+
+ -- delilnik ure za signal en (f=100 kHz)
+ deli: process(clk)
+ begin
+ if rising_edge(clk) then
+   if c = 499 then
+      c <= (others=>'0'); en <= '1';
+   else
+      c <= c + 1; en <= '0';
+   end if;
+ end if;
+ end process;
+
+ -- generatorji tonov, zamenjaj...
+ g1: gen port map(
+  clk  => clk,
+  en   => en, 
+  korak=> to_unsigned(172, 16), 
+  data => dat1
+ );
+		 
+ g2: gen port map(
+  clk  => clk,
+  en   => en, 
+  korak=> to_unsigned(193, 16),
+  data => dat2
+ );
+ 
+ g3: gen port map(
+  clk  => clk,
+  en   => en, 
+  korak=> to_unsigned(216, 16), 
+  data => dat3
+ );
+		 
+ g4: gen port map(
+  clk  => clk,
+  en   => en, 
+  korak=> to_unsigned(229, 16), 
+  data => dat4
+ );
+
+ 
+end RTL;

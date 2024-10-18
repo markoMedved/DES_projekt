@@ -1,0 +1,28 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity proc is
+ port (
+   clk  : in std_logic;
+   ton : in unsigned(3 downto 0);	
+   dat1, dat2, dat3, dat4 : in signed(7 downto 0);
+   zvok : out signed(7 downto 0)
+ );
+end proc;
+
+architecture RTL of proc is
+ signal d1, d2, d3, d4: signed(7 downto 0);
+ signal sum: signed(9 downto 0);
+begin
+
+ d1 <= dat1 when ton(0)='1' else "00000000";
+ d2 <= dat2 when ton(1)='1' else "00000000";
+ d3 <= dat3 when ton(2)='1' else "00000000";
+ d4 <= dat4 when ton(3)='1' else "00000000";
+
+ sum <= resize(d1, 10) + d2 + d3 + d4;
+ zvok <= sum(9 downto 2);
+
+ 
+end RTL;
